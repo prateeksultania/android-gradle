@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<manifest android:versionCode="2916" android:versionName="local" package="com"
+          xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <application android:icon="@drawable/ic_launcher" android:label="test">
+
+        <activity android:name="com.test.MainActivity"
+                  android:label="test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+</manifest>

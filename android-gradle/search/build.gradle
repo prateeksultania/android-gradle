@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+    compile project(':logging')
+    compile project(':exception-utils')
+    compile project(':olympus-commons')
+    compile project(':contacts')
+    compile project(':groups')
+    compile project(':kvstore')
+    compile project(':concurrency-utils')
+    compile project(':groups:group-contracts')
+    compile project(':event-utils')
+    compile project(':sqlite-db')
+    compile project(':appInfoProvider')
+    provided 'commons-lang:commons-lang:2.4'
+    provided 'org.apache.commons:commons-lang3:3.2'
+    provided 'com.google.guava:guava:18.0'
+}

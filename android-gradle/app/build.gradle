@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 0
+        buildConfigField "String", "APP_DOMAIN", "\"com.test\""
+    }
+
+    
+    productFlavors {
+        market {
+            applicationId "com.foo"
+            versionName "1.0"
+            resValue "string", "app_name", "FooBar"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+}
+
+dependencies {
+
+    compile project(':reporting-utils')
+    compile project(':door')
+    compile project(':accounts')
+    compile project(':xmpp-commons')
+    compile project(':stickers')
+    compile project(':retryable-transport')
+    compile project(':push')
+    compile project(':phonebook')
+    compile project(':batcher')
+    compile project(':chat-states')
+    compile project(':contacts')
+    compile project(':db-commons')
+    compile project(':emojis')
+    compile project(':widgets')
+    compile project(':groups')
+    compile project(':groups:group-contracts')
+    compile project(':groups:group-client')
+    compile project(':messaging-commons')
+    compile project(':history')
+    compile project(':facebook')
+
+
+    compile project(':logging')
+    compile project(':kvstore')
+    compile project(':networkUtils')
+    compile project(':event-utils')
+    compile project(':concurrency-utils')
+    compile project(':error-reporting')
+    compile project(':exception-utils')
+    compile project(':simple-crop-image-lib')
+    compile project(':ui-utils')
+    compile project(':dns-cache')
+    compile project(':appInfoProvider')
+
+    compile project(':apollo-client')
+    compile project(':push-client')
+    compile project(':mrs-client')
+    compile project(':iq-client')
+    compile project(':messaging-clients')
+    compile project(':medusa-client')
+    compile project(':zeus-client')
+    compile project(':olympus-commons')
+    compile project(':cyclops-client')
+
+    compile project(':retriever')
+    compile project(':dl-door')
+    compile project(':streamauth')
+    compile project(':xml-parse-utils')
+    compile project(':analyzer')
+
+    compile 'net.jcip:jcip-annotations:1.0'
+    compile 'com.loopj.android:android-async-http:1.4.4'
+    compile 'org.jetbrains:annotations:13.0'
+    compile 'com.github.tony19:logback-android-classic:1.0.8-1'
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'de.greenrobot:eventbus:2.2.0'
+    compile 'com.squareup:tape:1.1.0'
+    compile 'commons-lang:commons-lang:2.4'
+    compile 'org.apache.commons:commons-lang3:3.2'
+    compile 'joda-time:joda-time:2.3'
+    compile 'com.crittercism:crittercism-android-agent:4.5.1'
+    compile 'com.parse.bolts:bolts-android:1.1.2'
+    compile 'com.android.support:support-v13:21.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.facebook.stetho:stetho:1.1.1'
+    compile 'com.crashlytics.android:crashlytics:1.1.13'
+    compile 'com.google.android.gms:play-services-gcm:7.8.0'
+    compile 'com.google.android.gms:play-services-analytics:7.8.0'
+    compile 'com.google.guava:guava:18.0'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.2'
+    testCompile 'org.powermock:powermock-module-junit4-common:1.6.2'
+    testCompile 'org.powermock:powermock-module-junit4-rule-agent:1.6.2'
+    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.2'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.2'
+}

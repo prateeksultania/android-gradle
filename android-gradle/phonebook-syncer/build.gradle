@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs 'src'
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+
+    compile project(':phonebook')
+    compile project(':accounts')
+    compile project(':logging')
+    compile project(':concurrency-utils')
+    compile project(':exception-utils')
+    compile project(':iq-client')
+    compile project(':kvstore')
+    compile project(':event-utils')
+    compile project(':batcher')
+    compile project(':xmpp-commons')
+    compile project(':olympus-commons')
+    provided 'com.google.guava:guava:18.0'
+    provided 'org.jetbrains:annotations:13.0'
+    compile project(':xml-parse-utils')
+    provided 'net.jcip:jcip-annotations:1.0'
+}

@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs 'src'
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+    compile project(':concurrency-utils')
+    compile project(':appInfoProvider')
+    compile project(':networkUtils')
+    compile project(':event-utils')
+    compile project(':exception-utils')
+    compile project(':reporting-utils')
+    compile project(':logging')
+    provided 'com.google.guava:guava:18.0'
+    provided 'org.jetbrains:annotations:13.0'
+    provided 'net.jcip:jcip-annotations:1.0'
+    compile project(':dl-door')
+    compile(project(':xml-parse-utils'))
+}
+
